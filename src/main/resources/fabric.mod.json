@@ -1,0 +1,34 @@
+{
+	"schemaVersion": 1,
+	"id": "more-ores",
+	"version": "1.0.4",
+	"name": "More Ores",
+	"description": "This mod add minerals, ore generation, tools and armors",
+	"authors": [
+		"RayvaxLux1206"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/more-ores/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"rvl.more_ores.MoreOres"
+		]
+	},
+	"mixins": [
+		"more-ores.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.3",
+		"minecraft": ">=1.21.4",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
