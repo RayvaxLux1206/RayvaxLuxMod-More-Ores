@@ -1,0 +1,532 @@
+package rvl.more_ores.item;
+
+
+import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.item.Item;
+import net.minecraft.item.equipment.ArmorMaterial;
+import net.minecraft.item.equipment.EquipmentType;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
+import rvl.more_ores.MoreOres;
+import rvl.more_ores.item.special_item.*;
+import rvl.more_ores.item.tool_fixer.*;
+import rvl.more_ores.item.trim.AddTrimMaterials;
+
+public class ModItems {
+
+//Items register - Minerals
+    public static final Item ALUMINIUM_INGOT = registerItem("aluminium_ingot", new Item(normalSettings("aluminium_ingot").trimMaterial(AddTrimMaterials.TRIM_ALUMINIUM)));
+    public static final Item ALUMINIUM_NUGGET = registerItem("aluminium_nugget", new Item(normalSettings("aluminium_nugget")));
+    public static final Item ALUMINIUM_RAW = registerItem("aluminium_raw", new Item(normalSettings("aluminium_raw")));
+
+    public static final Item TIN_INGOT = registerItem("tin_ingot", new Item(normalSettings("tin_ingot").trimMaterial(AddTrimMaterials.TRIM_TIN)));
+    public static final Item TIN_NUGGET = registerItem("tin_nugget", new Item(normalSettings("tin_nugget")));
+    public static final Item TIN_RAW = registerItem("tin_raw", new Item(normalSettings("tin_raw")));
+
+    public static final Item BRONZE_INGOT = registerItem("bronze_ingot", new Item(normalSettings("bronze_ingot").trimMaterial(AddTrimMaterials.TRIM_BRONZE)));
+    public static final Item BRONZE_NUGGET = registerItem("bronze_nugget", new Item(normalSettings("bronze_nugget")));
+    public static final Item BRONZE_ALLOY = registerItem("bronze_alloy", new Item(normalSettings("bronze_alloy")));
+
+    public static final Item STEEL_INGOT = registerItem("steel_ingot", new Item(normalSettings("steel_ingot").trimMaterial(AddTrimMaterials.TRIM_STEEL)));
+    public static final Item STEEL_NUGGET = registerItem("steel_nugget", new Item(normalSettings("steel_nugget")));
+    public static final Item STEEL_ALLOY = registerItem("steel_alloy", new Item(normalSettings("steel_alloy")));
+
+    public static final Item CHROME_INGOT = registerItem("chrome_ingot", new Item(normalSettings("chrome_ingot").trimMaterial(AddTrimMaterials.TRIM_CHROME)));
+    public static final Item CHROME_NUGGET = registerItem("chrome_nugget", new Item(normalSettings("chrome_nugget")));
+    public static final Item CHROME_RAW = registerItem("chrome_raw", new Item(normalSettings("chrome_raw")));
+
+    public static final Item NICKEL_INGOT = registerItem("nickel_ingot", new Item(normalSettings("nickel_ingot").trimMaterial(AddTrimMaterials.TRIM_NICKEL)));
+    public static final Item NICKEL_NUGGET = registerItem("nickel_nugget", new Item(normalSettings("nickel_nugget")));
+    public static final Item NICKEL_RAW = registerItem("nickel_raw", new Item(normalSettings("nickel_raw")));
+
+    public static final Item PLOMB_INGOT = registerItem("plomb_ingot", new ToxicItem(normalSettings("plomb_ingot").trimMaterial(AddTrimMaterials.TRIM_PLOMB), StatusEffects.WITHER, 10));
+    public static final Item PLOMB_NUGGET = registerItem("plomb_nugget", new ToxicItem(normalSettings("plomb_nugget"), StatusEffects.WITHER, 10));
+    public static final Item PLOMB_RAW = registerItem("plomb_raw", new ToxicItem(normalSettings("plomb_raw"), StatusEffects.WITHER, 10));
+
+    public static final Item SILICON_INGOT = registerItem("silicon_ingot", new Item(normalSettings("silicon_ingot").trimMaterial(AddTrimMaterials.TRIM_SILICON)));
+    public static final Item SILICON_NUGGET = registerItem("silicon_nugget", new Item(normalSettings("silicon_nugget")));
+    public static final Item SILICON_RAW = registerItem("silicon_raw", new Item(normalSettings("silicon_raw")));
+
+    public static final Item SILVER_INGOT = registerItem("silver_ingot", new Item(normalSettings("silver_ingot").trimMaterial(AddTrimMaterials.TRIM_SILVER)));
+    public static final Item SILVER_NUGGET = registerItem("silver_nugget", new Item(normalSettings("silver_nugget")));
+    public static final Item SILVER_RAW = registerItem("silver_raw", new Item(normalSettings("silver_raw")));
+
+    public static final Item TITANIUM_INGOT = registerItem("titanium_ingot", new Item(normalSettings("titanium_ingot").trimMaterial(AddTrimMaterials.TRIM_TITANIUM)));
+    public static final Item TITANIUM_NUGGET = registerItem("titanium_nugget", new Item(normalSettings("titanium_nugget")));
+    public static final Item TITANIUM_RAW = registerItem("titanium_raw", new Item(normalSettings("titanium_raw")));
+
+    public static final Item ZINC_INGOT = registerItem("zinc_ingot", new Item(normalSettings("zinc_ingot").trimMaterial(AddTrimMaterials.TRIM_ZINC)));
+    public static final Item ZINC_NUGGET = registerItem("zinc_nugget", new Item(normalSettings("zinc_nugget")));
+    public static final Item ZINC_RAW = registerItem("zinc_raw", new Item(normalSettings("zinc_raw")));
+
+
+    //ModItems - Aluminium Armor
+    public static final Item ALUMINIUM_HELMET = registerItem("aluminium_helmet",
+            new Item(humainArmorSettings(ModArmorMaterials.ALUMINIUM, EquipmentType.HELMET, "aluminium_helmet")));
+
+    public static final Item ALUMINIUM_CHESTPLATE = registerItem("aluminium_chestplate",
+            new Item(humainArmorSettings(ModArmorMaterials.ALUMINIUM, EquipmentType.CHESTPLATE, "aluminium_chestplate")));
+
+    public static final Item ALUMINIUM_LEGGINGS = registerItem("aluminium_leggings",
+            new Item(humainArmorSettings(ModArmorMaterials.ALUMINIUM, EquipmentType.LEGGINGS, "aluminium_leggings")));
+
+    public static final Item ALUMINIUM_BOOTS = registerItem("aluminium_boots",
+            new Item(humainArmorSettings(ModArmorMaterials.ALUMINIUM, EquipmentType.BOOTS, "aluminium_boots")));
+
+    //ModItems - Tin Armor
+    public static final Item TIN_HELMET = registerItem("tin_helmet",
+            new Item(humainArmorSettings(ModArmorMaterials.TIN, EquipmentType.HELMET, "tin_helmet")));
+
+    public static final Item TIN_CHESTPLATE = registerItem("tin_chestplate",
+            new Item(humainArmorSettings(ModArmorMaterials.TIN, EquipmentType.CHESTPLATE, "tin_chestplate")));
+
+    public static final Item TIN_LEGGINGS = registerItem("tin_leggings",
+            new Item(humainArmorSettings(ModArmorMaterials.TIN, EquipmentType.LEGGINGS, "tin_leggings")));
+
+    public static final Item TIN_BOOTS = registerItem("tin_boots",
+            new Item(humainArmorSettings(ModArmorMaterials.TIN, EquipmentType.BOOTS, "tin_boots")));
+
+    //ModItems - Bronze Armor
+    public static final Item BRONZE_HELMET = registerItem("bronze_helmet",
+            new Item(humainArmorSettings(ModArmorMaterials.BRONZE, EquipmentType.HELMET, "bronze_helmet")));
+
+    public static final Item BRONZE_CHESTPLATE = registerItem("bronze_chestplate",
+            new Item(humainArmorSettings(ModArmorMaterials.BRONZE, EquipmentType.CHESTPLATE, "bronze_chestplate")));
+
+    public static final Item BRONZE_LEGGINGS = registerItem("bronze_leggings",
+            new Item(humainArmorSettings(ModArmorMaterials.BRONZE, EquipmentType.LEGGINGS, "bronze_leggings")));
+
+    public static final Item BRONZE_BOOTS = registerItem("bronze_boots",
+            new Item(humainArmorSettings(ModArmorMaterials.BRONZE, EquipmentType.BOOTS, "bronze_boots")));
+
+
+    //ModItems - Steel Armor
+    public static final Item STEEL_HELMET = registerItem("steel_helmet",
+            new Item(humainArmorSettings(ModArmorMaterials.STEEL, EquipmentType.HELMET, "steel_helmet")));
+
+    public static final Item STEEL_CHESTPLATE = registerItem("steel_chestplate",
+            new Item(humainArmorSettings(ModArmorMaterials.STEEL, EquipmentType.CHESTPLATE, "steel_chestplate")));
+
+    public static final Item STEEL_LEGGINGS = registerItem("steel_leggings",
+            new Item(humainArmorSettings(ModArmorMaterials.STEEL, EquipmentType.LEGGINGS, "steel_leggings")));
+
+    public static final Item STEEL_BOOTS = registerItem("steel_boots",
+            new Item(humainArmorSettings(ModArmorMaterials.STEEL, EquipmentType.BOOTS, "steel_boots")));
+
+    //ModItems - Chrome Armor
+    public static final Item CHROME_HELMET = registerItem("chrome_helmet",
+            new Item(humainArmorSettings(ModArmorMaterials.CHROME, EquipmentType.HELMET, "chrome_helmet")));
+
+    public static final Item CHROME_CHESTPLATE = registerItem("chrome_chestplate",
+            new Item(humainArmorSettings(ModArmorMaterials.CHROME, EquipmentType.CHESTPLATE, "chrome_chestplate")));
+
+    public static final Item CHROME_LEGGINGS = registerItem("chrome_leggings",
+            new Item(humainArmorSettings(ModArmorMaterials.CHROME, EquipmentType.LEGGINGS, "chrome_leggings")));
+
+    public static final Item CHROME_BOOTS = registerItem("chrome_boots",
+            new Item(humainArmorSettings(ModArmorMaterials.CHROME, EquipmentType.BOOTS, "chrome_boots")));
+
+    //ModItems - Nickel Armor
+    public static final Item NICKEL_HELMET = registerItem("nickel_helmet",
+            new Item(humainArmorSettings(ModArmorMaterials.NICKEL, EquipmentType.HELMET, "nickel_helmet")));
+
+    public static final Item NICKEL_CHESTPLATE = registerItem("nickel_chestplate",
+            new Item(humainArmorSettings(ModArmorMaterials.NICKEL, EquipmentType.CHESTPLATE, "nickel_chestplate")));
+
+    public static final Item NICKEL_LEGGINGS = registerItem("nickel_leggings",
+            new Item(humainArmorSettings(ModArmorMaterials.NICKEL, EquipmentType.LEGGINGS, "nickel_leggings")));
+
+    public static final Item NICKEL_BOOTS = registerItem("nickel_boots",
+            new Item(humainArmorSettings(ModArmorMaterials.NICKEL, EquipmentType.BOOTS, "nickel_boots")));
+
+    //ModItems - Plomb Armor
+    public static final Item PLOMB_HELMET = registerItem("plomb_helmet",
+            new ToxicItem(humainArmorSettings(ModArmorMaterials.PLOMB, EquipmentType.HELMET, "plomb_helmet"), StatusEffects.WITHER, 10));
+
+    public static final Item PLOMB_CHESTPLATE = registerItem("plomb_chestplate",
+            new ToxicItem(humainArmorSettings(ModArmorMaterials.PLOMB, EquipmentType.CHESTPLATE, "plomb_chestplate"), StatusEffects.WITHER, 10));
+
+    public static final Item PLOMB_LEGGINGS = registerItem("plomb_leggings",
+            new ToxicItem(humainArmorSettings(ModArmorMaterials.PLOMB, EquipmentType.LEGGINGS, "plomb_leggings"), StatusEffects.WITHER, 10));
+
+    public static final Item PLOMB_BOOTS = registerItem("plomb_boots",
+            new ToxicItem(humainArmorSettings(ModArmorMaterials.PLOMB, EquipmentType.BOOTS, "plomb_boots"), StatusEffects.WITHER, 10));
+
+    //ModItems - Silver Armor
+    public static final Item SILVER_HELMET = registerItem("silver_helmet",
+            new Item(humainArmorSettings(ModArmorMaterials.SILVER, EquipmentType.HELMET, "silver_helmet")));
+
+    public static final Item SILVER_CHESTPLATE = registerItem("silver_chestplate",
+            new Item(humainArmorSettings(ModArmorMaterials.SILVER, EquipmentType.CHESTPLATE, "silver_chestplate")));
+
+    public static final Item SILVER_LEGGINGS = registerItem("silver_leggings",
+            new Item(humainArmorSettings(ModArmorMaterials.SILVER, EquipmentType.LEGGINGS, "silver_leggings")));
+
+    public static final Item SILVER_BOOTS = registerItem("silver_boots",
+            new Item(humainArmorSettings(ModArmorMaterials.SILVER, EquipmentType.BOOTS, "silver_boots")));
+
+    //ModItems - Titanium Armor
+    public static final Item TITANIUM_HELMET = registerItem("titanium_helmet",
+            new Item(humainArmorSettings(ModArmorMaterials.TITANIUM, EquipmentType.HELMET, "titanium_helmet")));
+
+    public static final Item TITANIUM_CHESTPLATE = registerItem("titanium_chestplate",
+            new Item(humainArmorSettings(ModArmorMaterials.TITANIUM, EquipmentType.CHESTPLATE, "titanium_chestplate")));
+
+    public static final Item TITANIUM_LEGGINGS = registerItem("titanium_leggings",
+            new Item(humainArmorSettings(ModArmorMaterials.TITANIUM, EquipmentType.LEGGINGS, "titanium_leggings")));
+
+    public static final Item TITANIUM_BOOTS = registerItem("titanium_boots",
+            new Item(humainArmorSettings(ModArmorMaterials.TITANIUM, EquipmentType.BOOTS, "titanium_boots")));
+
+    //ModItems - Zinc Armor
+    public static final Item ZINC_HELMET = registerItem("zinc_helmet",
+            new Item(humainArmorSettings(ModArmorMaterials.ZINC, EquipmentType.HELMET, "zinc_helmet")));
+
+    public static final Item ZINC_CHESTPLATE = registerItem("zinc_chestplate",
+            new Item(humainArmorSettings(ModArmorMaterials.ZINC, EquipmentType.CHESTPLATE, "zinc_chestplate")));
+
+    public static final Item ZINC_LEGGINGS = registerItem("zinc_leggings",
+            new Item(humainArmorSettings(ModArmorMaterials.ZINC, EquipmentType.LEGGINGS, "zinc_leggings")));
+
+    public static final Item ZINC_BOOTS = registerItem("zinc_boots",
+            new Item(humainArmorSettings(ModArmorMaterials.ZINC, EquipmentType.BOOTS, "zinc_boots")));
+
+
+
+    //ModItemTools - Aluminium Tools
+    public static final Item ALUMINIUM_PICKAXE = registerItem("aluminium_pickaxe", new SimplifyItem(new FixerSettings(AddToolMaterial.ALUMINIUM).pickaxe(3.7f, 1.5f, normalSettings("aluminium_pickaxe"))));
+
+    public static final Item ALUMINIUM_SHOVEL = registerItem("aluminium_shovel", new FixShovelItem(new FixerSettings(AddToolMaterial.ALUMINIUM), 4f, 1.2f, normalSettings("aluminium_shovel")));
+
+    public static final Item ALUMINIUM_AXE = registerItem("aluminium_axe", new FixAxeItem(new FixerSettings(AddToolMaterial.ALUMINIUM), 8.5f, 1f, normalSettings("aluminium_axe")));
+
+    public static final Item ALUMINIUM_HOE = registerItem("aluminium_hoe", new FixHoeItem(new FixerSettings(AddToolMaterial.ALUMINIUM), 1f, 3.5f, normalSettings("aluminium_hoe")));
+
+    public static final Item ALUMINIUM_SWORD = registerItem("aluminium_sword", new FixSwordItem(new FixerSettings(AddToolMaterial.ALUMINIUM), 5.6f, 1.8f, normalSettings("aluminium_sword")));
+
+    //ModItemTools - Tin Tools
+    public static final Item TIN_PICKAXE = registerItem("tin_pickaxe",
+            new FixPickaxeItem(new FixerSettings(AddToolMaterial.TIN), 3.3f, 1.5f, normalSettings("tin_pickaxe")));
+
+    public static final Item TIN_SHOVEL = registerItem("tin_shovel",
+            new FixShovelItem(new FixerSettings(AddToolMaterial.TIN), 3.5f, 1.2f, normalSettings("tin_shovel")));
+
+    public static final Item TIN_AXE = registerItem("tin_axe",
+            new FixAxeItem(new FixerSettings(AddToolMaterial.TIN), 8f, 1f, normalSettings("tin_axe")));
+
+    public static final Item TIN_HOE = registerItem("tin_hoe",
+            new FixHoeItem(new FixerSettings(AddToolMaterial.TIN), 1f, 2.6f, normalSettings("tin_hoe")));
+
+    public static final Item TIN_SWORD = registerItem("tin_sword",
+            new FixSwordItem(new FixerSettings(AddToolMaterial.TIN), 5.2f, 1.6f, normalSettings("tin_sword")));
+
+    //ModItemTools - Bronze Tools
+    public static final Item BRONZE_PICKAXE = registerItem("bronze_pickaxe",
+            new FixPickaxeItem(new FixerSettings(AddToolMaterial.BRONZE), 3.7f, 1.5f, normalSettings("bronze_pickaxe")));
+
+    public static final Item BRONZE_SHOVEL = registerItem("bronze_shovel",
+            new FixShovelItem(new FixerSettings(AddToolMaterial.BRONZE), 4f, 1f, normalSettings("bronze_shovel")));
+
+    public static final Item BRONZE_AXE = registerItem("bronze_axe",
+            new FixAxeItem(new FixerSettings(AddToolMaterial.BRONZE), 8.5f, 1f, normalSettings("bronze_axe")));
+
+    public static final Item BRONZE_HOE = registerItem("bronze_hoe",
+            new FixHoeItem(new FixerSettings(AddToolMaterial.BRONZE), 1f, 2.6f, normalSettings("bronze_hoe")));
+
+    public static final Item BRONZE_SWORD = registerItem("bronze_sword",
+            new FixSwordItem(new FixerSettings(AddToolMaterial.BRONZE), 5.6f, 1.6f, normalSettings("bronze_sword")));
+
+    //ModItemTools - Steel Tools
+    public static final Item STEEL_PICKAXE = registerItem("steel_pickaxe",
+            new FixPickaxeItem(new FixerSettings(AddToolMaterial.STEEL), 4.6f, 1.2f, normalSettings("steel_pickaxe")));
+
+    public static final Item STEEL_SHOVEL = registerItem("steel_shovel",
+            new FixShovelItem(new FixerSettings(AddToolMaterial.STEEL), 5f, 1f, normalSettings("steel_shovel")));
+
+    public static final Item STEEL_AXE = registerItem("steel_axe",
+            new FixAxeItem(new FixerSettings(AddToolMaterial.STEEL), 9.5f, 0.9f, normalSettings("steel_axe")));
+
+    public static final Item STEEL_HOE = registerItem("steel_hoe",
+            new FixHoeItem(new FixerSettings(AddToolMaterial.STEEL), 1f, 2.6f, normalSettings("steel_hoe")));
+
+    public static final Item STEEL_SWORD = registerItem("steel_sword",
+            new FixSwordItem(new FixerSettings(AddToolMaterial.STEEL), 6.5f, 1.6f, normalSettings("steel_sword")));
+
+    //ModItemTools - Chrome Tools
+    public static final Item CHROME_PICKAXE = registerItem("chrome_pickaxe",
+            new FixPickaxeItem(new FixerSettings(AddToolMaterial.CHROME), 3.5f, 1.2f, normalSettings("chrome_pickaxe")));
+
+    public static final Item CHROME_SHOVEL = registerItem("chrome_shovel",
+            new FixShovelItem(new FixerSettings(AddToolMaterial.CHROME), 3.5f, 1.2f, normalSettings("chrome_shovel")));
+
+    public static final Item CHROME_AXE = registerItem("chrome_axe",
+            new FixAxeItem(new FixerSettings(AddToolMaterial.CHROME), 8f, 1f, normalSettings("chrome_axe")));
+
+    public static final Item CHROME_HOE = registerItem("chrome_hoe",
+            new FixHoeItem(new FixerSettings(AddToolMaterial.CHROME), 1f, 2.6f, normalSettings("chrome_hoe")));
+
+    public static final Item CHROME_SWORD = registerItem("chrome_sword",
+            new FixSwordItem(new FixerSettings(AddToolMaterial.CHROME), 5.2f, 1.6f, normalSettings("chrome_sword")));
+
+    //ModItemTools - Nickel Tools
+    public static final Item NICKEL_PICKAXE = registerItem("nickel_pickaxe",
+            new FixPickaxeItem(new FixerSettings(AddToolMaterial.NICKEL), 4f, 1.2f, normalSettings("nickel_pickaxe")));
+
+    public static final Item NICKEL_SHOVEL = registerItem("nickel_shovel",
+            new FixShovelItem(new FixerSettings(AddToolMaterial.NICKEL), 4.5f, 1f, normalSettings("nickel_shovel")));
+
+    public static final Item NICKEL_AXE = registerItem("nickel_axe",
+            new FixAxeItem(new FixerSettings(AddToolMaterial.NICKEL), 9f, 0.9f, normalSettings("nickel_axe")));
+
+    public static final Item NICKEL_HOE = registerItem("nickel_hoe",
+            new FixHoeItem(new FixerSettings(AddToolMaterial.NICKEL), 1f, 2.6f, normalSettings("nickel_hoe")));
+
+    public static final Item NICKEL_SWORD = registerItem("nickel_sword",
+            new FixSwordItem(new FixerSettings(AddToolMaterial.NICKEL), 6f, 1.6f, normalSettings("nickel_sword")));
+
+    //ModItemTools - Plomb Tools
+    public static final Item PLOMB_PICKAXE = registerItem("plomb_pickaxe",
+            new ToxicPickaxeItem(new FixerSettings(AddToolMaterial.PLOMB), 3.2f, 1.2f, normalSettings("plomb_pickaxe"), StatusEffects.WITHER));
+
+    public static final Item PLOMB_SHOVEL = registerItem("plomb_shovel",
+            new ToxicShovelItem(new FixerSettings(AddToolMaterial.PLOMB), 4.5f, 0.8f, normalSettings("plomb_shovel"), StatusEffects.WITHER));
+
+    public static final Item PLOMB_AXE = registerItem("plomb_axe",
+            new ToxicAxeItem(new FixerSettings(AddToolMaterial.PLOMB), 9f, 0.7f, normalSettings("plomb_axe"), StatusEffects.WITHER));
+
+    public static final Item PLOMB_HOE = registerItem("plomb_hoe",
+            new ToxicHoeItem(new FixerSettings(AddToolMaterial.PLOMB), 1f, 2.6f, normalSettings("plomb_hoe"), StatusEffects.WITHER));
+
+    public static final Item PLOMB_SWORD = registerItem("plomb_sword",
+            new ToxicSwordItem(new FixerSettings(AddToolMaterial.PLOMB), 6f, 1.2f, normalSettings("plomb_sword"), StatusEffects.WITHER));
+
+    //ModItemTools - Silver Tools
+    public static final Item SILVER_PICKAXE = registerItem("silver_pickaxe",
+            new FixPickaxeItem(new FixerSettings(AddToolMaterial.SILVER), 3.5f, 1.2f, normalSettings("silver_pickaxe")));
+
+    public static final Item SILVER_SHOVEL = registerItem("silver_shovel",
+            new FixShovelItem(new FixerSettings(AddToolMaterial.SILVER), 1.2f, 1f, normalSettings("silver_shovel")));
+
+    public static final Item SILVER_AXE = registerItem("silver_axe",
+            new FixAxeItem(new FixerSettings(AddToolMaterial.SILVER), 3.5f, 1f, normalSettings("silver_axe")));
+
+    public static final Item SILVER_HOE = registerItem("silver_hoe",
+            new FixHoeItem(new FixerSettings(AddToolMaterial.SILVER), 1f, 2.6f, normalSettings("silver_hoe")));
+
+    public static final Item SILVER_SWORD = registerItem("silver_sword",
+            new FixSwordItem(new FixerSettings(AddToolMaterial.SILVER), 5f, 1.6f, normalSettings("silver_sword")));
+
+    //ModItemTools - Titanium Tools
+    public static final Item TITANIUM_PICKAXE = registerItem("titanium_pickaxe",
+            new FixPickaxeItem(new FixerSettings(AddToolMaterial.TITANIUM), 4f, 1.2f, normalSettings("titanium_pickaxe")));
+
+    public static final Item TITANIUM_SHOVEL = registerItem("titanium_shovel",
+            new FixShovelItem(new FixerSettings(AddToolMaterial.TITANIUM), 4.2f, 1.1f, normalSettings("titanium_shovel")));
+
+    public static final Item TITANIUM_AXE = registerItem("titanium_axe",
+            new FixAxeItem(new FixerSettings(AddToolMaterial.TITANIUM), 9.2f, 0.9f, normalSettings("titanium_axe")));
+
+    public static final Item TITANIUM_HOE = registerItem("titanium_hoe",
+            new FixHoeItem(new FixerSettings(AddToolMaterial.TITANIUM), 1f, 2.6f, normalSettings("titanium_hoe")));
+
+    public static final Item TITANIUM_SWORD = registerItem("titanium_sword",
+            new FixSwordItem(new FixerSettings(AddToolMaterial.TITANIUM), 6f, 1.6f, normalSettings("titanium_sword")));
+
+    //ModItemTools - Zinc Tools
+    public static final Item ZINC_PICKAXE = registerItem("zinc_pickaxe",
+            new FixPickaxeItem(new FixerSettings(AddToolMaterial.ZINC), 3.5f, 1.2f, normalSettings("zinc_pickaxe")));
+
+    public static final Item ZINC_SHOVEL = registerItem("zinc_shovel",
+            new FixShovelItem(new FixerSettings(AddToolMaterial.ZINC), 3.5f, 1.1f, normalSettings("zinc_shovel")));
+
+    public static final Item ZINC_AXE = registerItem("zinc_axe",
+            new FixAxeItem(new FixerSettings(AddToolMaterial.ZINC), 7f, 1f, normalSettings("zinc_axe")));
+
+    public static final Item ZINC_HOE = registerItem("zinc_hoe",
+            new FixHoeItem(new FixerSettings(AddToolMaterial.ZINC), 1f, 2.6f, normalSettings("zinc_hoe")));
+
+    public static final Item ZINC_SWORD = registerItem("zinc_sword",
+            new FixSwordItem(new FixerSettings(AddToolMaterial.ZINC), 5f, 1.6f, normalSettings("zinc_sword")));
+
+    //autre minerais
+    public static final Item LITHIUM_INGOT = registerItemV2("lithium_ingot", new Item.Settings().trimMaterial(AddTrimMaterials.TRIM_LITHIUM)).isAlcaline();
+    public static final Item LITHIUM_NUGGET = registerItemV2("lithium_nugget", new Item.Settings()).isAlcaline();
+    public static final Item LITHIUM_RAW = registerItem("lithium_raw", new Item(normalSettings("lithium_raw")));
+
+    public static final Item ARSENIC = registerItem("arsenic", new ToxicItem(normalSettings("arsenic").trimMaterial(AddTrimMaterials.TRIM_ARSENIC), StatusEffects.POISON, 10));
+
+    public static final Item SODIUM_INGOT = registerItem("sodium_ingot", new SimplifyItem(normalSettings("sodium_ingot").trimMaterial(AddTrimMaterials.TRIM_SODIUM)).isAlcaline());
+    public static final Item SODIUM_NUGGET = registerItem("sodium_nugget", new SimplifyItem(normalSettings("sodium_nugget")).isAlcaline());
+    public static final Item SALT = registerItem("salt", new Item(normalSettings("salt")));
+
+    //Volcanite
+    public static final Item VOLCANITE_INGOT = registerItem("volcanite_ingot", new Item(normalSettings("volcanite_ingot").fireproof().trimMaterial(AddTrimMaterials.TRIM_VOLCANITE)));
+    public static final Item VOLCANITE_NUGGET = registerItem("volcanite_nugget", new Item(normalSettings("volcanite_nugget").fireproof()));
+    public static final Item VOLCANITE_RAW = registerItem("volcanite_raw", new Item(normalSettings("volcanite_raw").fireproof()));
+
+    public static final Item VOLCANITE_HELMET = registerItem("volcanite_helmet", new Item(humainArmorSettings(ModArmorMaterials.VOLCANITE, EquipmentType.HELMET, "volcanite_helmet").fireproof()));
+    public static final Item VOLCANITE_CHESTPLATE = registerItem("volcanite_chestplate", new Item(humainArmorSettings(ModArmorMaterials.VOLCANITE, EquipmentType.CHESTPLATE, "volcanite_chestplate").fireproof()));
+    public static final Item VOLCANITE_LEGGINGS = registerItem("volcanite_leggings", new Item(humainArmorSettings(ModArmorMaterials.VOLCANITE, EquipmentType.LEGGINGS, "volcanite_leggings").fireproof()));
+    public static final Item VOLCANITE_BOOTS = registerItem("volcanite_boots", new Item(humainArmorSettings(ModArmorMaterials.VOLCANITE, EquipmentType.BOOTS, "volcanite_boots").fireproof()));
+
+    public static final Item VOLCANITE_PICKAXE = registerItem("volcanite_pickaxe", new FixPickaxeItem(new FixerSettings(AddToolMaterial.VOLCANITE), 4.2f, 1.2f, normalSettings("volcanite_pickaxe").fireproof()));
+    public static final Item VOLCANITE_SHOVEL = registerItem("volcanite_shovel", new FixShovelItem(new FixerSettings(AddToolMaterial.VOLCANITE), 4.7f, 1f, normalSettings("volcanite_shovel").fireproof()));
+    public static final Item VOLCANITE_AXE = registerItem("volcanite_axe", new FixAxeItem(new FixerSettings(AddToolMaterial.VOLCANITE), 10f, 0.9f, normalSettings("volcanite_axe").fireproof()));
+    public static final Item VOLCANITE_HOE = registerItem("volcanite_hoe", new FixHoeItem(new FixerSettings(AddToolMaterial.VOLCANITE), 1f, 3.5f, normalSettings("volcanite_hoe").fireproof()));
+    public static final Item VOLCANITE_SWORD = registerItem("volcanite_sword", new FixSwordItem(new FixerSettings(AddToolMaterial.VOLCANITE), 6.5f, 1.6f, normalSettings("volcanite_sword").fireproof()));
+
+    //Soulrite
+    public static final Item SOULRITE_INGOT = registerItem("soulrite_ingot", new Item(normalSettings("soulrite_ingot").fireproof().trimMaterial(AddTrimMaterials.TRIM_SOULRITE)));
+    public static final Item SOULRITE_NUGGET = registerItem("soulrite_nugget", new Item(normalSettings("soulrite_nugget").fireproof()));
+    public static final Item SOULRITE_RAW = registerItem("soulrite_raw", new Item(normalSettings("soulrite_raw").fireproof()));
+
+    public static final Item SOULRITE_HELMET = registerItem("soulrite_helmet", new Item(humainArmorSettings(ModArmorMaterials.SOULRITE, EquipmentType.HELMET, "soulrite_helmet").fireproof()));
+    public static final Item SOULRITE_CHESTPLATE = registerItem("soulrite_chestplate", new Item(humainArmorSettings(ModArmorMaterials.SOULRITE, EquipmentType.CHESTPLATE, "soulrite_chestplate").fireproof()));
+    public static final Item SOULRITE_LEGGINGS = registerItem("soulrite_leggings", new Item(humainArmorSettings(ModArmorMaterials.SOULRITE, EquipmentType.LEGGINGS, "soulrite_leggings").fireproof()));
+    public static final Item SOULRITE_BOOTS = registerItem("soulrite_boots", new Item(humainArmorSettings(ModArmorMaterials.SOULRITE, EquipmentType.BOOTS, "soulrite_boots").fireproof()));
+
+    public static final Item SOULRITE_PICKAXE = registerItem("soulrite_pickaxe", new FixPickaxeItem(new FixerSettings(AddToolMaterial.SOULRITE), 4.4f, 1.2f, normalSettings("soulrite_pickaxe").fireproof()));
+    public static final Item SOULRITE_SHOVEL = registerItem("soulrite_shovel", new FixShovelItem(new FixerSettings(AddToolMaterial.SOULRITE), 5.2f, 1f, normalSettings("soulrite_shovel").fireproof()));
+    public static final Item SOULRITE_AXE = registerItem("soulrite_axe", new FixAxeItem(new FixerSettings(AddToolMaterial.SOULRITE), 9f, 1f, normalSettings("soulrite_axe").fireproof()));
+    public static final Item SOULRITE_HOE = registerItem("soulrite_hoe", new FixHoeItem(new FixerSettings(AddToolMaterial.SOULRITE), 1f, 0f, normalSettings("soulrite_hoe").fireproof()));
+    public static final Item SOULRITE_SWORD = registerItem("soulrite_sword", new FixSwordItem(new FixerSettings(AddToolMaterial.SOULRITE), 7f, 1.6f, normalSettings("soulrite_sword").fireproof()));
+
+    //Racknite
+    public static final Item RACKNITE_INGOT = registerItem("racknite_ingot", new Item(normalSettings("racknite_ingot").fireproof().trimMaterial(AddTrimMaterials.TRIM_RACKNITE)));
+    public static final Item RACKNITE_NUGGET = registerItem("racknite_nugget", new Item(normalSettings("racknite_nugget").fireproof()));
+    public static final Item RACKNITE_RAW = registerItem("racknite_raw", new Item(normalSettings("racknite_raw").fireproof()));
+
+    public static final Item RACKNITE_HELMET = registerItem("racknite_helmet", new Item(humainArmorSettings(ModArmorMaterials.RACKNITE, EquipmentType.HELMET, "racknite_helmet").fireproof()));
+    public static final Item RACKNITE_CHESTPLATE = registerItem("racknite_chestplate", new Item(humainArmorSettings(ModArmorMaterials.RACKNITE, EquipmentType.CHESTPLATE, "racknite_chestplate").fireproof()));
+    public static final Item RACKNITE_LEGGINGS = registerItem("racknite_leggings", new Item(humainArmorSettings(ModArmorMaterials.RACKNITE, EquipmentType.LEGGINGS, "racknite_leggings").fireproof()));
+    public static final Item RACKNITE_BOOTS = registerItem("racknite_boots", new Item(humainArmorSettings(ModArmorMaterials.RACKNITE, EquipmentType.BOOTS, "racknite_boots").fireproof()));
+
+    public static final Item RACKNITE_PICKAXE = registerItem("racknite_pickaxe", new FixPickaxeItem(new FixerSettings(AddToolMaterial.RACKNITE), 4f, 1.2f, normalSettings("racknite_pickaxe").fireproof()));
+    public static final Item RACKNITE_SHOVEL = registerItem("racknite_shovel", new FixShovelItem(new FixerSettings(AddToolMaterial.RACKNITE), 5f, 1f, normalSettings("racknite_shovel").fireproof()));
+    public static final Item RACKNITE_AXE = registerItem("racknite_axe", new FixAxeItem(new FixerSettings(AddToolMaterial.RACKNITE), 9f, 0.9f, normalSettings("racknite_axe").fireproof()));
+    public static final Item RACKNITE_HOE = registerItem("racknite_hoe", new FixHoeItem(new FixerSettings(AddToolMaterial.RACKNITE), 1f, 3f, normalSettings("racknite_hoe").fireproof()));
+    public static final Item RACKNITE_SWORD = registerItem("racknite_sword", new FixSwordItem(new FixerSettings(AddToolMaterial.RACKNITE), 6f, 1.6f, normalSettings("racknite_sword").fireproof()));
+
+    //Enderite
+    public static final Item ENDERITE_INGOT = registerItem("enderite_ingot", new Item(normalSettings("enderite_ingot").fireproof().trimMaterial(AddTrimMaterials.TRIM_ENDERITE)));
+    public static final Item ENDERITE_NUGGET = registerItem("enderite_nugget", new Item(normalSettings("enderite_nugget").fireproof()));
+    public static final Item ENDERITE_RAW = registerItem("enderite_raw", new Item(normalSettings("enderite_raw").fireproof()));
+
+    public static final Item ENDERITE_HELMET = registerItem("enderite_helmet", new Item(humainArmorSettings(ModArmorMaterials.ENDERITE, EquipmentType.HELMET, "enderite_helmet").fireproof()));
+    public static final Item ENDERITE_CHESTPLATE = registerItem("enderite_chestplate", new Item(humainArmorSettings(ModArmorMaterials.ENDERITE, EquipmentType.CHESTPLATE, "enderite_chestplate").fireproof()));
+    public static final Item ENDERITE_LEGGINGS = registerItem("enderite_leggings", new Item(humainArmorSettings(ModArmorMaterials.ENDERITE, EquipmentType.LEGGINGS, "enderite_leggings").fireproof()));
+    public static final Item ENDERITE_BOOTS = registerItem("enderite_boots", new Item(humainArmorSettings(ModArmorMaterials.ENDERITE, EquipmentType.BOOTS, "enderite_boots").fireproof()));
+
+    public static final Item ENDERITE_PICKAXE = registerItem("enderite_pickaxe", new FixPickaxeItem(new FixerSettings(AddToolMaterial.ENDERITE), 5.5f, 1.2f, normalSettings("enderite_pickaxe").fireproof()));
+    public static final Item ENDERITE_SHOVEL = registerItem("enderite_shovel", new FixShovelItem(new FixerSettings(AddToolMaterial.ENDERITE), 6f, 1f, normalSettings("enderite_shovel").fireproof()));
+    public static final Item ENDERITE_AXE = registerItem("enderite_axe", new FixAxeItem(new FixerSettings(AddToolMaterial.ENDERITE), 10f, 1f, normalSettings("enderite_axe").fireproof()));
+    public static final Item ENDERITE_HOE = registerItem("enderite_hoe", new FixHoeItem(new FixerSettings(AddToolMaterial.ENDERITE), 1f, 5f, normalSettings("enderite_hoe").fireproof()));
+    public static final Item ENDERITE_SWORD = registerItem("enderite_sword", new FixSwordItem(new FixerSettings(AddToolMaterial.ENDERITE), 7.6f, 1.6f , normalSettings("enderite_sword").fireproof()));
+
+    //Toxic_Bronze
+    public static final Item TOXIC_BRONZE_INGOT = registerItem("toxic_bronze_ingot", new ToxicItem(normalSettings("toxic_bronze_ingot").trimMaterial(AddTrimMaterials.TRIM_TOXIC_BRONZE), StatusEffects.POISON, 10));
+    public static final Item TOXIC_BRONZE_NUGGET = registerItem("toxic_bronze_nugget", new ToxicItem(normalSettings("toxic_bronze_nugget"), StatusEffects.POISON, 10));
+    public static final Item TOXIC_BRONZE_ALLOY = registerItem("toxic_bronze_alloy", new ToxicItem(normalSettings("toxic_bronze_alloy"), StatusEffects.POISON, 10));
+
+    public static final Item TOXIC_BRONZE_HELMET = registerItem("toxic_bronze_helmet", new ToxicItem(humainArmorSettings(ModArmorMaterials.TOXIC_BRONZE, EquipmentType.HELMET, "toxic_bronze_helmet"), StatusEffects.POISON, 10));
+    public static final Item TOXIC_BRONZE_CHESTPLATE = registerItem("toxic_bronze_chestplate", new ToxicItem(humainArmorSettings(ModArmorMaterials.TOXIC_BRONZE, EquipmentType.CHESTPLATE, "toxic_bronze_chestplate"), StatusEffects.POISON, 10));
+    public static final Item TOXIC_BRONZE_LEGGINGS = registerItem("toxic_bronze_leggings", new ToxicItem(humainArmorSettings(ModArmorMaterials.TOXIC_BRONZE, EquipmentType.LEGGINGS, "toxic_bronze_leggings"), StatusEffects.POISON, 10));
+    public static final Item TOXIC_BRONZE_BOOTS = registerItem("toxic_bronze_boots", new ToxicItem(humainArmorSettings(ModArmorMaterials.TOXIC_BRONZE, EquipmentType.BOOTS, "toxic_bronze_boots"), StatusEffects.POISON, 10));
+
+    public static final Item TOXIC_BRONZE_PICKAXE = registerItem("toxic_bronze_pickaxe", new ToxicPickaxeItem(new FixerSettings(AddToolMaterial.BRONZE), 5.5f, 1.2f, normalSettings("toxic_bronze_pickaxe"), StatusEffects.POISON));
+    public static final Item TOXIC_BRONZE_SHOVEL = registerItem("toxic_bronze_shovel", new ToxicShovelItem(new FixerSettings(AddToolMaterial.BRONZE), 6f, 1f, normalSettings("toxic_bronze_shovel"), StatusEffects.POISON));
+    public static final Item TOXIC_BRONZE_AXE = registerItem("toxic_bronze_axe", new ToxicAxeItem(new FixerSettings(AddToolMaterial.BRONZE), 10f, 1f, normalSettings("toxic_bronze_axe"), StatusEffects.POISON));
+    public static final Item TOXIC_BRONZE_HOE = registerItem("toxic_bronze_hoe", new ToxicHoeItem(new FixerSettings(AddToolMaterial.BRONZE), 1f, 5f, normalSettings("toxic_bronze_hoe"), StatusEffects.POISON));
+    public static final Item TOXIC_BRONZE_SWORD = registerItem("toxic_bronze_sword", new ToxicSwordItem(new FixerSettings(AddToolMaterial.BRONZE), 7.6f, 1.6f , normalSettings("toxic_bronze_sword"), StatusEffects.POISON));
+
+    //Horse Armors
+    public static final Item ALUMINIUM_HORSE_ARMOR = registerItem("aluminium_horse_armor", new Item(horseArmorSettings("aluminium_horse_armor", ModArmorMaterials.ALUMINIUM)));
+    public static final Item TIN_HORSE_ARMOR = registerItem("tin_horse_armor", new Item(horseArmorSettings("tin_horse_armor", ModArmorMaterials.TIN)));
+    public static final Item BRONZE_HORSE_ARMOR = registerItem("bronze_horse_armor", new Item(horseArmorSettings("bronze_horse_armor", ModArmorMaterials.BRONZE)));
+    public static final Item TOXIC_BRONZE_HORSE_ARMOR = registerItem("toxic_bronze_horse_armor", new ToxicItem(horseArmorSettings("toxic_bronze_horse_armor", ModArmorMaterials.TOXIC_BRONZE), StatusEffects.POISON, 10));
+    public static final Item STEEL_HORSE_ARMOR = registerItem("steel_horse_armor", new Item(horseArmorSettings("steel_horse_armor", ModArmorMaterials.STEEL)));
+    public static final Item CHROME_HORSE_ARMOR = registerItem("chrome_horse_armor", new Item(horseArmorSettings("chrome_horse_armor", ModArmorMaterials.CHROME)));
+    public static final Item NICKEL_HORSE_ARMOR = registerItem("nickel_horse_armor", new Item(horseArmorSettings("nickel_horse_armor", ModArmorMaterials.NICKEL)));
+    public static final Item PLOMB_HORSE_ARMOR = registerItem("plomb_horse_armor", new ToxicItem(horseArmorSettings("plomb_horse_armor", ModArmorMaterials.PLOMB), StatusEffects.WITHER, 10));
+    public static final Item SILVER_HORSE_ARMOR = registerItem("silver_horse_armor", new Item(horseArmorSettings("silver_horse_armor", ModArmorMaterials.SILVER)));
+    public static final Item TITANIUM_HORSE_ARMOR = registerItem("titanium_horse_armor", new Item(horseArmorSettings("titanium_horse_armor", ModArmorMaterials.TITANIUM)));
+    public static final Item ZINC_HORSE_ARMOR = registerItem("zinc_horse_armor", new Item(horseArmorSettings("zinc_horse_armor", ModArmorMaterials.ZINC)));
+    public static final Item VOLCANITE_HORSE_ARMOR = registerItem("volcanite_horse_armor", new Item(horseArmorSettings("volcanite_horse_armor", ModArmorMaterials.VOLCANITE).fireproof()));
+    public static final Item SOULRITE_HORSE_ARMOR = registerItem("soulrite_horse_armor", new Item(horseArmorSettings("soulrite_horse_armor", ModArmorMaterials.SOULRITE).fireproof()));
+    public static final Item RACKNITE_HORSE_ARMOR = registerItem("racknite_horse_armor", new Item(horseArmorSettings("racknite_horse_armor", ModArmorMaterials.RACKNITE).fireproof()));
+    public static final Item ENDERITE_HORSE_ARMOR = registerItem("enderite_horse_armor", new Item(horseArmorSettings("enderite_horse_armor", ModArmorMaterials.ENDERITE).fireproof()));
+
+    //Nautilus Armors
+    public static final Item ALUMINIUM_NAUTILUS_ARMOR = registerItem("aluminium_nautilus_armor", new Item(nautilusArmorSettings("aluminium_nautilus_armor", ModArmorMaterials.ALUMINIUM)));
+    public static final Item TIN_NAUTILUS_ARMOR = registerItem("tin_nautilus_armor", new Item(nautilusArmorSettings("tin_nautilus_armor", ModArmorMaterials.TIN)));
+    public static final Item BRONZE_NAUTILUS_ARMOR = registerItem("bronze_nautilus_armor", new Item(nautilusArmorSettings("bronze_nautilus_armor", ModArmorMaterials.BRONZE)));
+    public static final Item TOXIC_BRONZE_NAUTILUS_ARMOR = registerItem("toxic_bronze_nautilus_armor", new ToxicItem(nautilusArmorSettings("toxic_bronze_nautilus_armor", ModArmorMaterials.TOXIC_BRONZE), StatusEffects.POISON, 10));
+    public static final Item STEEL_NAUTILUS_ARMOR = registerItem("steel_nautilus_armor", new Item(nautilusArmorSettings("steel_nautilus_armor", ModArmorMaterials.STEEL)));
+    public static final Item CHROME_NAUTILUS_ARMOR = registerItem("chrome_nautilus_armor", new Item(nautilusArmorSettings("chrome_nautilus_armor", ModArmorMaterials.CHROME)));
+    public static final Item NICKEL_NAUTILUS_ARMOR = registerItem("nickel_nautilus_armor", new Item(nautilusArmorSettings("nickel_nautilus_armor", ModArmorMaterials.NICKEL)));
+    public static final Item PLOMB_NAUTILUS_ARMOR = registerItem("plomb_nautilus_armor", new ToxicItem(nautilusArmorSettings("plomb_nautilus_armor", ModArmorMaterials.PLOMB), StatusEffects.WITHER, 10));
+    public static final Item SILVER_NAUTILUS_ARMOR = registerItem("silver_nautilus_armor", new Item(nautilusArmorSettings("silver_nautilus_armor", ModArmorMaterials.SILVER)));
+    public static final Item TITANIUM_NAUTILUS_ARMOR = registerItem("titanium_nautilus_armor", new Item(nautilusArmorSettings("titanium_nautilus_armor", ModArmorMaterials.TITANIUM)));
+    public static final Item ZINC_NAUTILUS_ARMOR = registerItem("zinc_nautilus_armor", new Item(nautilusArmorSettings("zinc_nautilus_armor", ModArmorMaterials.ZINC)));
+    public static final Item VOLCANITE_NAUTILUS_ARMOR = registerItem("volcanite_nautilus_armor", new Item(nautilusArmorSettings("volcanite_nautilus_armor", ModArmorMaterials.VOLCANITE).fireproof()));
+    public static final Item SOULRITE_NAUTILUS_ARMOR = registerItem("soulrite_nautilus_armor", new Item(nautilusArmorSettings("soulrite_nautilus_armor", ModArmorMaterials.SOULRITE).fireproof()));
+    public static final Item RACKNITE_NAUTILUS_ARMOR = registerItem("racknite_nautilus_armor", new Item(nautilusArmorSettings("racknite_nautilus_armor", ModArmorMaterials.RACKNITE).fireproof()));
+    public static final Item ENDERITE_NAUTILUS_ARMOR = registerItem("enderite_nautilus_armor", new Item(nautilusArmorSettings("enderite_nautilus_armor", ModArmorMaterials.ENDERITE).fireproof()));
+
+    //Spears
+    public static final Item ALUMINIUM_SPEAR = registerItem("aluminium_spear", new FixSpearItem(new FixerSettings(AddToolMaterial.ALUMINIUM), 0.95f, 0.9f, 0.6f, 2.5f, 10f, 9f, 13f, normalSettings("aluminium_spear")));
+    public static final Item TIN_SPEAR = registerItem("tin_spear", new FixSpearItem(new FixerSettings(AddToolMaterial.TIN), 0.8f, 0.82f, 0.65f, 4.5f, 9f, 8.5f, 9f, normalSettings("tin_spear")));
+
+    public static final Item BRONZE_SPEAR = registerItem("bronze_spear", new FixSpearItem(new FixerSettings(AddToolMaterial.BRONZE), 0.9f, 0.85f, 0.62f, 3.5f, 8.5f, 7.5f, 12f, normalSettings("bronze_spear")));
+    public static final Item TOXIC_BRONZE_SPEAR = registerItem("toxic_bronze_spear", new ToxicSpearItem(new FixerSettings(AddToolMaterial.BRONZE), 0.9f, 0.85f, 0.62f, 3.5f, 8.5f, 7.5f, 12f, normalSettings("toxic_bronze_spear")));
+    public static final Item STEEL_SPEAR = registerItem("steel_spear", new FixSpearItem(new FixerSettings(AddToolMaterial.STEEL), 1f, 1f, 0.55f, 2.7f, 9f, 6.5f, 10.5f, normalSettings("steel_spear")));
+
+    public static final Item CHROME_SPEAR = registerItem("chrome_spear", new FixSpearItem(new FixerSettings(AddToolMaterial.CHROME), 0.8f, 0.82f, 0.65f, 4.5f, 9f, 8.5f, 9f, normalSettings("chrome_spear")));
+    public static final Item NICKEL_SPEAR = registerItem("nickel_spear", new FixSpearItem(new FixerSettings(AddToolMaterial.NICKEL), 0.95f, 0.95f, 0.6f, 2.5f, 8f, 6.75f, 11.25f, normalSettings("nickel_spear")));
+    public static final Item PLOMB_SPEAR = registerItem("plomb_spear", new ToxicSpearItem(new FixerSettings(AddToolMaterial.PLOMB), 0.95f, 0.7f, 0.7f, 3.5f, 10f, 8.5f, 13f, normalSettings("plomb_spear")));
+    public static final Item SILVER_SPEAR = registerItem("silver_spear", new FixSpearItem(new FixerSettings(AddToolMaterial.SILVER), 0.95f, 0.7f, 0.65f, 4f, 9f, 8.5f, 12f, normalSettings("silver_spear")));
+    public static final Item TITANIUM_SPEAR = registerItem("titanium_spear", new FixSpearItem(new FixerSettings(AddToolMaterial.TITANIUM), 0.95f, 0.95f, 0.6f, 3f, 8f, 6.5f, 11.3f, normalSettings("titanium_spear")));
+    public static final Item ZINC_SPEAR = registerItem("zinc_spear", new FixSpearItem(new FixerSettings(AddToolMaterial.ZINC), 0.8f, 0.82f, 0.65f, 4.5f, 10f, 9f, 9f, normalSettings("zinc_spear")));
+
+    public static final Item VOLCANITE_SPEAR = registerItem("volcanite_spear", new FixSpearItem(new FixerSettings(AddToolMaterial.VOLCANITE), 0.95f, 0.97f, 0.58f, 2.5f, 7.7f, 6.5f, 10.5f, normalSettings("volcanite_spear").fireproof()));
+    public static final Item SOULRITE_SPEAR = registerItem("soulrite_spear", new FixSpearItem(new FixerSettings(AddToolMaterial.SOULRITE), 1f, 1.05f, 0.55f, 3f, 7.5f, 6.5f, 9.8f, normalSettings("soulrite_spear").fireproof()));
+    public static final Item RACKNITE_SPEAR = registerItem("racknite_spear", new FixSpearItem(new FixerSettings(AddToolMaterial.RACKNITE), 0.95f, 0.95f, 0.6f, 3.5f, 8f, 6.25f, 11.25f, normalSettings("racknite_spear").fireproof()));
+    public static final Item ENDERITE_SPEAR = registerItem("enderite_spear", new FixSpearItem(new FixerSettings(AddToolMaterial.ENDERITE), 1.1f, 1.15f, 0.45f, 2.7f, 7.2f, 6f, 9f, normalSettings("enderite_spear").fireproof()));
+
+
+
+
+    public static Item.Settings normalSettings(String idKey) {
+        return new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, MoreOres.id(idKey)));
+    }
+    public static Item.Settings horseArmorSettings(String idKey, ArmorMaterial material) {
+        return new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, MoreOres.id(idKey))).maxCount(1).horseArmor(material);
+    }
+    public static Item.Settings nautilusArmorSettings(String idKey, ArmorMaterial material) {
+        return new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, MoreOres.id(idKey))).maxCount(1).nautilusArmor(material);
+    }
+
+    public static Item.Settings humainArmorSettings( ArmorMaterial material, EquipmentType type, String idKey) {
+        return new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, MoreOres.id(idKey))).maxCount(1).armor(material, type);
+    }
+
+
+     public static void registerItems() {
+         
+    }
+    
+    private static Item registerItem(String id, Item item) {
+        return Registry.register(Registries.ITEM, MoreOres.id(id), item);
+    }
+
+    private static SimplifyItem registerItemV2(String id, Item.Settings settings) {
+        return Registry.register(Registries.ITEM, MoreOres.id(id), new SimplifyItem(settings.registryKey(RegistryKey.of(RegistryKeys.ITEM, MoreOres.id(id)))));
+    }
+
+
+
+
+
+}
